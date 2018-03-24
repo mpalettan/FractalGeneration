@@ -1,7 +1,7 @@
 # Fractal Generation
 Example of using Shiny - Generation of fractals
 
-This is a Coursera peer assessed assignment for the course "Developing Data Products" 
+This is a Coursera peer assessed assignment for the course "Developing Data Products". 
 It has two parts: 
 
 1) Create a Shiny application and deploy it on Rstudio's servers. 
