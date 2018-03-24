@@ -22,3 +22,6 @@ The presentation must satisfy the following:
 3) It must be hosted on github or Rpubs. 
 4) It must contained some embedded R code that gets run when slidifying the document.
 
+## Render the presentation
+
+https://rawgit.com/mpalettan/FractalGeneration/master/FractalGeneration.html#/
