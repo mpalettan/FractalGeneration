@@ -1,0 +1,76 @@
+Fractal Generation
+========================================================
+author: Mauricio Paletta
+date: March 24, 2018
+autosize: true
+
+What are Fractals?
+========================================================
+
+Infinitely complex patterns that are self-similar across different scales. They are created by repeating a simple process over and over in an ongoing feedback loop.
+For more information please visit:
+
+<https://fractalfoundation.org/resources/what-are-fractals/>
+
+<https://en.wikipedia.org/wiki/Fractal>
+
+R package
+========================================================
+
+The R code used in this project was written by Voevudko A. E., Ph.D.
+For more information please visit:
+
+<https://www.codeproject.com/Articles/1195034/A-Few-Approaches-to-Generating-Fractal-Images-in-R>
+
+How to use the Fractal Generator?
+========================================================
+
+The fractal is generated automatically using the parameters selected in the panel on the left. There are three parameters:
+
+- The name of a known fractal. 
+- The order or dimension of the fractal. The higher the order, the longer it takes the fractal to generate.
+- The color with which you want to appear the fractal.Some fractals look better in certain colors.
+
+Example
+========================================================
+
+```{r, echo=FALSE}
+matkronpow <- function(m, n) {
+    if (n < 2) { return (m) };
+    r <- m; n <- n-1; 
+    for (i in 1:n) {r <- r %x% m};
+    return (r);
+}
+
+plotmat <- function(mat, fn, clr, ttl, dflg = 0, psz = 600, cx = 1.0) {
+    m <- nrow(mat); d <- 0; X <- NULL; Y <- NULL;
+
+    # Building X and Y arrays for plotting from not equal to zero values in mat.
+    #
+    for (i in 1:m) {
+        for (j in 1:m) { if(mat[i,j] == 0) { next } else { d <- d+1; X[d] <- i; Y[d] <- j} }
+    };
+
+    # Plotting
+    #
+    if (ttl != "") { 
+        mp <- plot(X, Y, main = ttl, axes = FALSE, xlab = "", ylab = "", 
+                   col = clr, pch = 20, cex = cx)}
+    else {
+        par(mar = c(0,0,0,0));
+        mp <- plot(X, Y, axes = FALSE, xlab = NULL, ylab = NULL, 
+                   col = clr, pch = 20, cex=cx)
+    };
+    return (mp);
+}
+
+gpKronFractal <- function(m, n, fn, clr, ttl, dflg = 0, psz = 640, cx = 1.0) {
+    fign <- "Kpbf";
+    if (ttl != "") { ttl = paste0(ttl, ", order ", n) };
+    r <- matkronpow(m, n);
+    return (plotmat(r, fn, clr, ttl, dflg, psz, cx));
+}
+
+p <- gpKronFractal(matrix(c(0, 1, 0, 1, 1, 1, 0, 1, 0), ncol = 3, nrow = 3, byrow = TRUE),
+              4, "VicsekFractal1", "red", "Vicsek Fractal")
+```
