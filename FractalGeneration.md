@@ -38,9 +38,13 @@ Example
 
 
 ```r
-p <- gpKronFractal(matrix(c(0,1,0,1,1,1,0,1,0), 
+gpKronFractal(matrix(c(0,1,0,1,1,1,0,1,0), 
        ncol=3, nrow=3, byrow=TRUE), 4, 
        "VicsekFractal1", "red", "Vicsek Fractal")
 ```
 
 <img src="FractalGeneration-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
+
+```
+NULL
+```
