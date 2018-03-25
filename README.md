@@ -25,3 +25,7 @@ The presentation must satisfy the following:
 ## Render the presentation
 
 https://rawgit.com/mpalettan/FractalGeneration/master/FractalGeneration.html#/
+
+## Render the application
+
+https://mpalettan.shinyapps.io/FractalGeneration/
