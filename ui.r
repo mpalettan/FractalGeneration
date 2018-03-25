@@ -8,8 +8,9 @@ fractals <- c("Vicsek", "Sierpinski", "Rug (square pattern)",
               "Forest", "Batman", "Coral")
 
 shinyUI(pageWithSidebar(
-    headerPanel("Fractal generation"),
+    headerPanel("Fractal generation", windowTitle = "Shiny example by Mauricio Paletta"),
     sidebarPanel(
+        width = 6,
         h4("1) Select the kind of fractal you want to generate"),
         selectInput("fractal", NULL, choices = fractals),
         h4("2) Indicates the order of the fractal (from 1 to 5)"),
@@ -30,7 +31,7 @@ shinyUI(pageWithSidebar(
                        "Brown" = "brown"))
     ),
     mainPanel(
-        h4('Fractal generated:'),
+        width = 6,
         verbatimTextOutput("fractalInfo"),
         plotOutput('fractal'),
         h5('Notes:'),
