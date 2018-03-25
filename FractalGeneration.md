@@ -1,7 +1,7 @@
 Fractal Generation
 ========================================================
 author: Mauricio Paletta
-date: March 24, 2018
+date: March 25, 2018
 autosize: true
 
 What are Fractals?
@@ -29,9 +29,18 @@ The fractal is generated automatically using the parameters selected in the pane
 
 - The name of a known fractal. 
 - The order or dimension of the fractal. The higher the order, the longer it takes the fractal to generate.
-- The color with which you want to appear the fractal.Some fractals look better in certain colors.
+- The color with which you want to appear the fractal. Some fractals look better in certain colors.
 
 Example
 ========================================================
 
-![plot of chunk unnamed-chunk-1](FractalGeneration-figure/unnamed-chunk-1-1.png)
+
+
+
+```r
+p <- gpKronFractal(matrix(c(0,1,0,1,1,1,0,1,0), 
+       ncol=3, nrow=3, byrow=TRUE), 4, 
+       "VicsekFractal1", "red", "Vicsek Fractal")
+```
+
+<img src="FractalGeneration-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
